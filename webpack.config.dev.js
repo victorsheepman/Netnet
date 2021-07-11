@@ -42,7 +42,11 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/,
         use: ["file-loader"]
-      }
+      },
+      {
+        test: /\.(ttf|eot|woff|woff2)$/,
+        use: ['url-loader?limit=100000'] 
+      },
     ],
  },
   devServer: {
@@ -66,6 +70,14 @@ module.exports = {
               {
                 from: path.resolve(__dirname, "src", "assets/images"),
                 to: "assets/images"
+              },
+              {
+                from: path.resolve(__dirname, "src", "assets/icons"),
+                to: "assets/icons"
+              },
+              {
+                from: path.resolve(__dirname, "src", "assets/fonts"),
+                to: "assets/fonts"
               }
             ]
         }),

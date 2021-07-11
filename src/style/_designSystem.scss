@@ -1,0 +1,89 @@
+//funciones
+@function calculateRem($size) {
+    $font-1: ($size / 16) * 1rem;
+    @return $font-1;
+};
+
+@function porcentaje($width){
+   @return  $width * 100%/360;
+};
+
+/*@font-face {
+    font-family: 'Avenir';
+    src: url('../assets/fonts/AvenirNextLTPro-Bold.otf'),
+         url('../assets/fonts/AvenirNextLTPro-It.otf') ,
+         url('../assets/fonts/AvenirNextLTPro-Regular.otf');
+}*/
+
+//colors
+$red:#D22F26;
+$black:#000000;
+$white: #ffffff;
+$gray: #686868;
+
+//tipografia
+h1{
+    font-family: 'Avenir';
+    font-size: calculateRem(27);
+    font-style: normal;
+    font-weight: 700;
+    line-height: calculateRem(37);
+    letter-spacing: 0em;
+    text-align: left;
+    color: $red;
+}
+.Sub-1{
+    //styleName: Subtitle 1;
+    font-family: Avenir Next;
+    font-size: calculateRem(18);
+    font-style: normal;
+    font-weight: 700;
+    line-height: calculateRem(24);
+    letter-spacing: 0em;
+    text-align: left;
+}
+.Body-1-bold{
+    //styleName: Body 1/Demi Bold;
+    font-family: Avenir Next;
+    font-size: calculateRem(14);
+    font-style: normal;
+    font-weight: 600;
+    line-height: calculateRem(24);
+    letter-spacing: 0em;
+    text-align: left;
+}
+.Body-1{
+    @extend .Body-1-bold;
+    font-weight: 400;
+   
+}
+.Body-2-bold{
+        //styleName: Body 2/Demi Bold;
+    font-family: Avenir Next;
+    font-size: calculateRem(11);
+    font-style: normal;
+    font-weight: 600;
+    line-height: calculateRem(15);
+    letter-spacing: 0em;
+    text-align: left;
+}
+.Body-2{
+    @extend .Body-2-bold;
+    font-weight: 400;
+}
+
+.buttom{
+    @extend .Body-2-bold;
+}
+
+//mixin
+@mixin button-white($width) {
+    width: porcentaje($width);
+    min-width: $width;
+    background-color: $white;
+    color: $black;
+}
+
+
+
+
