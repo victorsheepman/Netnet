@@ -6,7 +6,8 @@
   "scripts": {
     "test": "js sass css",
     "build": "webpack --mode production --config webpack.config.js",
-    "start": "webpack serve --config webpack.config.dev.js"
+    "start": "webpack serve --config webpack.config.dev.js",
+    "dev": "webpack --mode development --config webpack.config.dev.js"
   },
   "repository": {
     "type": "git",
