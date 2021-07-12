@@ -90,6 +90,10 @@ h1{
     justify-content: center;
 
 }
+@mixin movieCard($url) {
+    width: 96px;
+    height: 144px;
+}
 *{
     margin: 0;
     padding: 0;

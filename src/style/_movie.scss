@@ -1,9 +1,38 @@
 .Movie{
-    &__container{
-        width: porcentaje(329);
-        min-width: 329px;
-        height: 560px; 
-        margin-top: 48px;
-        margin-left: 16px;
-    }
+   width: 100%;
+   margin-top: 50px;
+   height: 560px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   &__popular{
+      width: porcentaje(329);
+      min-width: 329px;
+      height: 176px; 
+      margin-left: 16px;
+      margin-right: 16px;
+      color: white;
+   }
+   &__slider{
+      width: 100%;;
+      height: 144px;
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      overflow-x: scroll;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x proximity; 
+   }
+   &__card{
+      width: 94px;
+      min-width: 94px;
+      height: 144px;
+      margin-left: 8px;
+      scroll-snap-align: center;
+      img{
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
 }
