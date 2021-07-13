@@ -2,14 +2,14 @@ const apiKey = 'ffae6ceb377fb3d244739ecd9b2c1a1d';
 
 //obtener peliculas por su id
 async function getMovieById(id) {
-    const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`;
+    const url = `https://api.themoviedb.org/3/tv/${id}?api_key=${apiKey}`;
     const response = await fetch(url);
     const data = await response.json();
     return data;
 }
 //obtener las peliculas mas populares de la api
 async function getPopularMovies() {
-    const url = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${apiKey}`;
+    const url = `https://api.themoviedb.org/3/discover/tv/?sort_by=popularity.desc&api_key=${apiKey}`;
     const response = await fetch(url);
     const data = await response.json();
     return data.results;
@@ -32,11 +32,10 @@ async function getMovies() {
     }
     return movies;
 }
-//const start = document.querySelector('#start');
 
 //renderizamos las peliculas
 function renderMovies(movies) {
-    let movieContainer = document.querySelector('#movies');
+    let movieContainer = document.querySelector('#tv');
     movies.forEach(movie => {
         let movieimg = document.createElement('figure');
         movieimg.innerHTML = `
@@ -46,10 +45,9 @@ function renderMovies(movies) {
     });
 };
 //las inyectamos a el documento html
-const start =  async () => {
+const tv = async () => {
     const movies =  await getMovies();
     renderMovies(movies);
     console.log('hola');
 }
-
-export default start;
+ export default tv;

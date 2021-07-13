@@ -22,17 +22,17 @@
       overflow-x: scroll;
       overscroll-behavior-x: contain;
       scroll-snap-type: x proximity; 
-   }
-   &__card{
-      width: 94px;
-      min-width: 94px;
-      height: 144px;
-      margin-left: 8px;
-      scroll-snap-align: center;
-      img{
-         width: 100%;
-         height: 100%;
-         object-fit: cover;
+      figure{
+         width: 94px;
+         min-width: 94px;
+         height: 144px;
+         margin-left: 8px;
+         scroll-snap-align: center;
+         img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+         }
       }
    }
 }
