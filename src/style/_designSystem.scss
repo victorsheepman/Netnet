@@ -101,12 +101,14 @@ h1{
 }
 main{
     width: 100%;
+    min-width: 360px;
     height: auto;
-    background-color: $black;
+    background-color:black;
 }
 body{
-    background-color: $black;
+    background-color:black;
 }
+
 
 
 

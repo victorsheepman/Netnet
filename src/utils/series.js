@@ -9,7 +9,7 @@ async function getMovieById(id) {
 }
 //obtener las peliculas mas populares de la api
 async function getPopularMovies() {
-    const url = `https://api.themoviedb.org/3/discover/tv/?sort_by=popularity.desc&api_key=${apiKey}`;
+    const url = `https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}`;
     const response = await fetch(url);
     const data = await response.json();
     return data.results;
