@@ -3,6 +3,8 @@ import start from "./utils/api";
 import tv from "./utils/series";
 import play from "./utils/top-rated";
 
-window.addEventListener('load',start);
-window.addEventListener('load', tv);
-window.addEventListener('load', play);
+import router from "./routes";
+
+window.addEventListener('load', router);
+
+window.addEventListener('hashchange', router);

@@ -22,7 +22,7 @@ async function getMoviesIds(n = 6){
 }
 
 //obtenemos de la api los datos de las 6 peliculas buscandolas por su id
-async function getMovies() {
+const getSeries = async ()=> {
     const ids = await getMoviesIds();
     const movies = [];
     for (const id in ids) {
@@ -50,4 +50,4 @@ const tv = async () => {
     renderMovies(movies);
     console.log('hola');
 }
- export default tv;
+ export default getSeries;

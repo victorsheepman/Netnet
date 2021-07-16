@@ -22,7 +22,7 @@ async function getMoviesIds(n = 6){
 }
 
 //obtenemos de la api los datos de las 6 peliculas buscandolas por su id
-async function getMovies() {
+const getMovies = async () => {
     const ids = await getMoviesIds();
     const movies = [];
     for (const id in ids) {
@@ -46,10 +46,10 @@ function renderMovies(movies) {
     });
 };
 //las inyectamos a el documento html
-const start =  async () => {
+/*const start =  async () => {
     const movies =  await getMovies();
     renderMovies(movies);
     console.log('hola');
-}
+}*/
 
-export default start;
+export default getMovies;

@@ -1,7 +1,4 @@
-import getMovieById from '../utils/getData';
-import getHash from '../utils/getHash';
-
-const Movie = async () => {
+const Serie = async () => {
     const id = getHash();
     const movie = await getMovieById(id); 
     const array = [];
@@ -39,4 +36,4 @@ const Movie = async () => {
     return view;
 }
 
-export default Movie;
+export default Serie;

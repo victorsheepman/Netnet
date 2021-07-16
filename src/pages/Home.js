@@ -1,4 +1,10 @@
-const Home = () => {
+import getData from '../utils/getData';
+import getMovies from '../utils/api';
+
+
+const Home = async () => {
+
+    const movies = await getMovies();
     const view = `
     <header class="header">
             <div class="header__top">
@@ -31,21 +37,14 @@ const Home = () => {
         </header>
         <section class="Movie">
             <section class="Movie__popular">
-                <h2 class="Sub-1">Nuevas en Netnet</h2>
-                <div class="Movie__slider" id="movies">
-                </div>
-            </section>
-            <section class="Movie__popular">
-                <h2 class="Sub-1">Series en Netnet</h2>
-                <div class="Movie__slider" id="tv">
-                </div>
-            </section>
-            <section class="Movie__popular">
                 <h2 class="Sub-1">Populares en Netnet</h2>
                 <div class="Movie__slider" id="top">
-                    <figure class="Movie__card">
-                        <img src="assets/images/matrix.jpg" alt="">
-                    </figure>
+                ${movies.map(movie => 
+                    ` <figure class="Movie__card">
+                        <a href="#/${movie.id}/">
+                           <img src="https://image.tmdb.org/t/p/w342${movie.poster_path}" alt="">
+                        </a>
+                    </figure>`).join('')}
                 </div>
             </section>
         </section>

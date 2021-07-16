@@ -3,10 +3,14 @@
         width: 100%;
         min-width: 360px;
         margin-top: 48px;
+        img{
+            width: 100%;
+            height: 100%;
+        }
     }
     &__title{
         width: porcentaje(328);
-        height: 69px;
+        height: auto;
         margin-left: 16px;
         color: white;
         margin-top: 16px;
