@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <main>
-        <header class="header">
+const Home = () => {
+    const view = `
+    <header class="header">
             <div class="header__top">
                 <div class="header__top__logo">
-                    <span>ultimoo commit</span>
+                    <span></span>
                 </div>
                 <nav class="header__top__nav"> 
                     <ul>
@@ -57,15 +49,7 @@
                 </div>
             </section>
         </section>
-      
-    </main>
-   <footer>
-        <ul>
-            <li>Inicio</li>
-            <li>Próximamente</li>
-            <li>Buscar</li>
-            <li>Descargas</li>
-        </ul>
-    </footer>
-</body>
-</html>
+    `;
+    return view;
+}
+export default Home;

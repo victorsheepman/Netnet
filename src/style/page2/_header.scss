@@ -1,0 +1,46 @@
+.movie{
+   &_image{
+        width: 100%;
+        min-width: 360px;
+        margin-top: 48px;
+    }
+    &__title{
+        width: porcentaje(328);
+        height: 69px;
+        margin-left: 16px;
+        color: white;
+        margin-top: 16px;
+    }
+    &__data{
+        width: 100%;
+        height: 24px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5px;
+    }
+    &__year{
+        width: 59px;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        color: $gray;
+        div{
+            width: 12px;
+            height: 16px;
+            background-color: $gray;
+            color: white;
+        }
+    }
+    &__duration{
+        width: 86px;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        div{
+            width: 29px;
+            height: 100%;
+        }
+    }
+}
+

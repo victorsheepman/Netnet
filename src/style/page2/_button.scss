@@ -1,0 +1,19 @@
+.Button{
+    width: porcentaje(328);
+    height: 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 16px;
+    &--white{
+        @include  button-white(328px);
+
+    }
+    &--black{
+        @extend .Button--white;
+        background-color: #2B2B2B;
+    }
+    figure{
+        margin-right: 9px;
+    }
+}
