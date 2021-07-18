@@ -15,7 +15,7 @@ const Home = async () => {
                 <div class="header__top__logo">
                     <span></span>
                 </div>
-                <nav class="header__top__nav"> 
+                <nav class="header__top__nav "> 
                     <ul>
                         <li>Series</li>
                         <li>Películas</li>
