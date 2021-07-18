@@ -3,7 +3,8 @@ import getSerie from '../utils/getSerie';
 
 const Serie = async () => {
     const id = getHash();
-    const serie = await getSerie(id); 
+    const serie = await getSerie(id);
+    const runtime = serie.last_episode_to_air; 
     const view = `
         <section class="movie__inner">
             <header class="movie_image">
@@ -14,10 +15,10 @@ const Serie = async () => {
                 <div class="movie__data .Body-1">
                     <span>99% de coincidencia</span>
                     <span class="movie__year">
-                       2021<div>R</div>
+                    ${serie.first_air_date.slice('-', 4)}<div>R</div>
                     </span>
                     <span class="movie__duration"> 
-                        52m<div>HD</div>
+                       ${runtime.season_number}temp <div>HD</div>
                     </span>
                 </div>
             </div>

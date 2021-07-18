@@ -1,12 +1,14 @@
 import getData from '../utils/getData';
 import getMovies from '../utils/api';
 import getSeries from '../utils/series';
+import getMoviesTop from '../utils/top-rated';
 
 
 const Home = async () => {
 
     const movies = await getMovies();
     const series = await getSeries();
+    const top = await getMoviesTop();
     const view = `
     <header class="header">
             <div class="header__top">
@@ -58,6 +60,18 @@ const Home = async () => {
                                     <img src="https://image.tmdb.org/t/p/w342${serie.poster_path}" alt="">
                                 </a>
                     </figure>`).join('')}
+                </div>
+            </section>
+            <section class="Movie__popular">
+                <h2 class="Sub-1">Populares en Netnet</h2>
+                <div class="Movie__slider" id="top">
+                ${top.map(movie => `
+                    <figure class="Movie__card">
+                       <a href="#/${movie.id}/">
+                           <img src="https://image.tmdb.org/t/p/w342${movie.poster_path}" alt="">
+                       </a>
+                    </figure>
+                `).join('')}   
                 </div>
             </section> 
         </section>
