@@ -1,22 +1,23 @@
+import getHash from '../utils/getHash';
+import getSerie from '../utils/getSerie';
+
 const Serie = async () => {
     const id = getHash();
-    const movie = await getMovieById(id); 
-    const array = [];
-    const runtime = movie.runtime + '';
+    const serie = await getSerie(id); 
     const view = `
         <section class="movie__inner">
             <header class="movie_image">
-                <img src="https://image.tmdb.org/t/p/w342${movie.poster_path}" alt="">
+                <img src="https://image.tmdb.org/t/p/w342${serie.poster_path}" alt="">
             </header>
             <div class="movie__title">
-                <h2>${movie.original_title}</h2>
+                <h2>${serie.name}</h2>
                 <div class="movie__data .Body-1">
                     <span>99% de coincidencia</span>
                     <span class="movie__year">
-                        ${movie.release_date.slice('-', 4)}<div>R</div>
+                       2021<div>R</div>
                     </span>
                     <span class="movie__duration"> 
-                        ${runtime.charAt(0)}h${runtime.charAt(1)}${runtime.charAt(2)}m<div>HD</div>
+                        52m<div>HD</div>
                     </span>
                 </div>
             </div>
@@ -29,7 +30,7 @@ const Serie = async () => {
                 </button>
             </section>
             <div class="description">
-                <p>${movie.overview}</p>
+                <p>${serie.overview}</p>
                 <span class="description__credit"></span>
             </div>
         </section>`;

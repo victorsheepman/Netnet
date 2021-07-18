@@ -1,10 +1,12 @@
 import getData from '../utils/getData';
 import getMovies from '../utils/api';
+import getSeries from '../utils/series';
 
 
 const Home = async () => {
 
     const movies = await getMovies();
+    const series = await getSeries();
     const view = `
     <header class="header">
             <div class="header__top">
@@ -47,6 +49,17 @@ const Home = async () => {
                     </figure>`).join('')}
                 </div>
             </section>
+            <section class="Movie__popular">
+                <h2 class="Sub-1">Series en Netnet</h2>
+                <div class="Movie__slider" id="tv">
+                    ${series.map(serie => 
+                        `<figure class="Movie__card">
+                                <a href="?/${serie.id}/">
+                                    <img src="https://image.tmdb.org/t/p/w342${serie.poster_path}" alt="">
+                                </a>
+                    </figure>`).join('')}
+                </div>
+            </section> 
         </section>
     `;
     return view;

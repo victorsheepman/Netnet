@@ -4,12 +4,13 @@ import Movie from '../pages/Movie';
 import Error404 from '../pages/Error404';
 import getHash from '../utils/getHash'
 import resolveRoutes from '../utils/resolveRoutes';
+import Serie from '../pages/Serie';
 
 
 const routes = {
     '/': Home,
     '/:id': Movie,
-    '/contact': 'contact'
+    '/:serie':  Serie
 }
 
 const router = async () => {
@@ -18,7 +19,7 @@ const router = async () => {
 
     footer.innerHTML = await Footer();
     let hash = getHash();
-
+    console.log(hash);
     let route = await resolveRoutes(hash);
 
     let render =  routes[route] ? routes[route] : Error404;
